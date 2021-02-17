@@ -56,7 +56,7 @@ class Calculate(Analysis_Wall_Defects):
 while True:
     success, img = cap.read()
     with_nmsup = Calculate.preProcessing(img)
-    mag = Analysis_Wall_Defects.oriented_non_max_suppression(mag)
+    mag = Analysis_Wall_Defects.oriented_non_max_suppression(mag,ang)
     if with_nmsup is False:
         mag = cv2.normalize(mag, 0, 255, cv2.NORM_MINMAX)
         kernel = np.ones((5,5),np.uint8)
