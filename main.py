@@ -32,7 +32,7 @@ def non_max_suppression(data, win):
 
 gray_image = Camera.cap.read()
 with_nmsup = True #apply non-maximal suppression
-fudgefactor = 1.3 #with this threshold you can play a little bit
+fudgefactor =1.3 #with this threshold you can play a little bit
 sigma = 21 #for Gaussian Kernel
 kernel = 2*math.ceil(2*sigma)+1 #Kernel size
 
