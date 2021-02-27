@@ -2,7 +2,7 @@ import cv2
 import math
 import numpy as np
 import scipy.ndimage
-import Camera
+import Train
 
 
 def orientated_non_max_suppression(mag, ang):
