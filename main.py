@@ -50,8 +50,8 @@ while True:
     gray_image = cv2.subtract(gray_image, blur)
 
     # compute sobel response
-    sobelx = cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=3)
-    sobely = cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=3)
+    sobelx= cv2.Sobel(gray_image, cv2.CV_64F, 1, 0, ksize=3)
+    sobely= cv2.Sobel(gray_image, cv2.CV_64F, 0, 1, ksize=3)
     mag = np.hypot(sobelx, sobely)
     ang = np.arctan2(sobely, sobelx)
 

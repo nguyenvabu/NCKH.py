@@ -26,8 +26,8 @@ crack_Positive_df['path']=imageid_path_dict_Positive
 crack_Positive_df['label']=1
 crack_Positive_df['image']=crack_Positive_df['path'].map(lambda x: np.asarray(Image.open(x).resize((75,100))))
 
-print("Negative:",crack_Negative_df["image"][0].shape)
-print("Positive:",crack_Positive_df["image"][0].shape)
+print("Negative:", crack_Negative_df["image"][0].shape)
+print("Positive:", crack_Positive_df["image"][0].shape)
 
 print(imageid_path_dict_Negative.shape,imageid_path_dict_Positive.shape)
 
