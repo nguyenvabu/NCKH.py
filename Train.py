@@ -33,8 +33,8 @@ print("Positive:",crack_Positive_df["image"][0].shape)
 
 print(imageid_path_dict_Negative.shape,imageid_path_dict_Positive.shape)
 
-crack_df = crack_Negative_df.append(crack_Positive_df)  # 将两个dataframe合并
-crack_df.reset_index(drop=True,inplace=True)  # 重置检索
+crack_df = crack_Negative_df.append(crack_Positive_df)  # Combine two dataframes
+crack_df.reset_index(drop=True,inplace=True)  # Reset search
 print(crack_df.shape)
 features=crack_df.drop(columns=['label'],axis=1)
 target=crack_df["label"]
@@ -129,15 +129,15 @@ print('recall:{}'.format(recall_score(y_test, y_score)))
 print('f1-score:{}'.format(f1_score(y_test, y_score)))
 
 f,ax=plt.subplots()
-sns.heatmap(cm,annot=True,ax=ax,fmt='.4g') #Draw a heat map
+sns.heatmap(cm,annot=True,ax=ax,fmt='.4g') # Draw a heat map
 
-ax.set_title('confusion matrix',fontsize=16) #title
-ax.set_xlabel('Predict',fontsize=16) #Xaxis
-ax.set_ylabel('True',fontsize=16) #Yaxis
+ax.set_title('confusion matrix',fontsize=16) # title
+ax.set_xlabel('Predict',fontsize=16) # Xaxis
+ax.set_ylabel('True',fontsize=16) # Yaxis
 fig, ax = plt.subplots(figsize=(5, 4.4))
-#AUC valve
+# AUC valve
 auc = roc_auc_score(y_test,y_score_1)
-#Draw curves
+# Draw curves
 fpr, tpr, thresholds = roc_curve(y_test,y_score_1)
 ax.plot(fpr, tpr, linewidth = 2,label='AUC=%.4f' % auc)
 ax.plot([0,1],[0,1], 'k--')
