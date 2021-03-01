@@ -2,10 +2,8 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-import itertools
 from glob import glob
 from PIL import Image
-from sklearn.metrics import confusion_matrix
 from  sklearn.model_selection import train_test_split
 
 from keras.models import Sequential
@@ -113,7 +111,6 @@ plt.show()
 from sklearn.metrics import roc_curve
 import matplotlib.pyplot as plt
 
-from sklearn.preprocessing import label_binarize
 from sklearn.metrics import confusion_matrix, precision_score, accuracy_score,recall_score, f1_score,roc_auc_score
 
 y_score = model.predict_classes(x_test)
