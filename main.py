@@ -3,7 +3,6 @@ import math
 import numpy as np
 import scipy.ndimage
 import pickle
-####################
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 def orientated_non_max_suppression(mag, ang):
@@ -31,10 +30,6 @@ def non_max_suppression(data, win):
 
 # Create camera object
 cap = cv2.VideoCapture(0)
-
-# Import the trained model
-pickle_in = open("model_trained.p", "rb")  ## rb = READ BYTE
-model = pickle.load(pickle_in)
 
 while True:
     _, frame = cap.read()
