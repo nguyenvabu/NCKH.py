@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 from glob import glob
 from PIL import Image
-from  sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
 
