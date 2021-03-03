@@ -84,7 +84,6 @@ while True:
         mag = mag.astype(np.uint8)
         kernel = np.ones((5, 5), np.uint8)
         result = cv2.morphologyEx(mag, cv2.MORPH_CLOSE, kernel)
-
         contours, _ = cv2.findContours(result, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         cts = 0
         for cnt in contours:
@@ -97,7 +96,6 @@ while True:
                 cv2.putText(result, "Ceramic tiles non-crack", (20, 35), font, 0.75, (0, 0, 255), 2, cv2.LINE_AA)
             else:
                 cv2.putText(result, "Ceramic tiles crack", (20, 35), font, 0.75, (0, 0, 255), 2, cv2.LINE_AA)
-
         cv2.imshow('im', result)
         if cv2.waitKey(1) & 0xff == ord('q'):
             break

@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 from glob import glob
 from PIL import Image
-from  sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
 
@@ -71,6 +71,9 @@ model.add(Dense(1, activation='sigmoid'))
 model.summary()
 model.compile(optimizer='adam',loss='binary_crossentropy',metrics=['accuracy'])
 model.fit(x_train, y_train, validation_split=0.1,epochs=50, batch_size=256)
+
+if os.path.isfile('model_trained.h5') is False:
+    model.save('model_trained.h5')
 
 # Show all the information
 history = model.history
